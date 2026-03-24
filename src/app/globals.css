@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --teal: #1E6B6B;
+  --teal-light: #2A8A8A;
+  --teal-dark: #144f4f;
+  --sand: #F0EAD6;
+  --sand-light: #FAF7F0;
+  --off-white: #FAFAF8;
+  --charcoal: #1A1A2E;
+  --charcoal-light: #3A3A4E;
+  --cta-orange: #E8834A;
+  --cta-orange-dark: #D4723A;
+  --text-muted: #6B7280;
+  --border: #E5E0D5;
+}
+
+@theme inline {
+  --color-background: var(--off-white);
+  --color-foreground: var(--charcoal);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--off-white);
+  color: var(--charcoal);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Utility classes */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.text-teal { color: var(--teal); }
+.text-teal-light { color: var(--teal-light); }
+.bg-teal { background-color: var(--teal); }
+.bg-teal-light { background-color: var(--teal-light); }
+.bg-sand { background-color: var(--sand); }
+.bg-sand-light { background-color: var(--sand-light); }
+.bg-off-white { background-color: var(--off-white); }
+.text-cta { color: var(--cta-orange); }
+.bg-cta { background-color: var(--cta-orange); }
+.border-sand { border-color: var(--border); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--sand-light); }
+::-webkit-scrollbar-thumb { background: var(--teal-light); border-radius: 3px; }
+
+/* Accordion animation */
+.accordion-content {
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
