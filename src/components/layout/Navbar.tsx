@@ -18,16 +18,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -46,25 +38,18 @@ export default function Navbar() {
     setServicesOpen(false);
   }, [pathname]);
 
-  const navBg =
-    !isHome || scrolled
-      ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[var(--border)]"
-      : "bg-transparent";
-
-  const textColor = !isHome || scrolled ? "text-[var(--charcoal)]" : "text-white";
-  const logoColor = !isHome || scrolled ? "text-[var(--teal)]" : "text-white";
   const isServicesActive = SERVICES_PATHS.includes(pathname);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-[var(--border)] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <div className={`font-playfair font-semibold text-lg lg:text-xl ${logoColor} transition-colors`}>
+            <div className="font-playfair font-semibold text-lg lg:text-xl text-[var(--teal)]">
               Amanda J Gretsch
-              <span className={`block text-xs font-inter font-normal tracking-wider uppercase ${!isHome || scrolled ? "text-[var(--teal-light)]" : "text-white/80"}`}>
+              <span className="block text-xs font-inter font-normal tracking-wider uppercase text-[var(--teal-light)]">
                 PhD, MS, OTR/L · Encinitas, CA
               </span>
             </div>
@@ -76,7 +61,7 @@ export default function Navbar() {
             <Link
               href="/about"
               className={`px-3 py-2 rounded-md text-sm font-medium font-inter transition-colors ${
-                pathname === "/about" ? "text-[var(--teal)] font-semibold" : `${textColor} hover:text-[var(--teal)]`
+                pathname === "/about" ? "text-[var(--teal)] font-semibold" : "text-[var(--charcoal)] hover:text-[var(--teal)]"
               }`}
             >
               About
@@ -86,7 +71,7 @@ export default function Navbar() {
             <Link
               href="/conditions"
               className={`px-3 py-2 rounded-md text-sm font-medium font-inter transition-colors ${
-                pathname === "/conditions" ? "text-[var(--teal)] font-semibold" : `${textColor} hover:text-[var(--teal)]`
+                pathname === "/conditions" ? "text-[var(--teal)] font-semibold" : "text-[var(--charcoal)] hover:text-[var(--teal)]"
               }`}
             >
               Conditions
@@ -97,7 +82,7 @@ export default function Navbar() {
               <button
                 onClick={() => setServicesOpen((v) => !v)}
                 className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium font-inter transition-colors ${
-                  isServicesActive ? "text-[var(--teal)] font-semibold" : `${textColor} hover:text-[var(--teal)]`
+                  isServicesActive ? "text-[var(--teal)] font-semibold" : "text-[var(--charcoal)] hover:text-[var(--teal)]"
                 }`}
               >
                 Services
@@ -139,7 +124,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               className={`px-3 py-2 rounded-md text-sm font-medium font-inter transition-colors ${
-                pathname === "/contact" ? "text-[var(--teal)] font-semibold" : `${textColor} hover:text-[var(--teal)]`
+                pathname === "/contact" ? "text-[var(--teal)] font-semibold" : "text-[var(--charcoal)] hover:text-[var(--teal)]"
               }`}
             >
               Contact
@@ -151,7 +136,7 @@ export default function Navbar() {
             {/* Phone — desktop only */}
             <a
               href={SITE.phoneHref}
-              className={`hidden lg:flex items-center gap-2 text-sm font-medium ${textColor} hover:text-[var(--teal)] transition-colors mr-1`}
+              className="hidden lg:flex items-center gap-2 text-sm font-medium text-[var(--charcoal)] hover:text-[var(--teal)] transition-colors mr-1"
             >
               <Phone size={15} />
               {SITE.phone}
@@ -167,7 +152,7 @@ export default function Navbar() {
 
             {/* Hamburger — below lg only */}
             <button
-              className={`lg:hidden p-2 rounded-md ${textColor}`}
+              className="lg:hidden p-2 rounded-md text-[var(--charcoal)]"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
