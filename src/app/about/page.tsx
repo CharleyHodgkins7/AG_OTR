@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Award, BookOpen, Heart, MapPin, Star, ArrowRight } from "lucide-react";
 import { CREDENTIALS } from "@/lib/siteData";
+import { img } from "@/lib/imagePath";
 
 export const metadata: Metadata = {
   title: "About Dr. Amanda Gretsch",
@@ -94,7 +95,7 @@ export default function AboutPage() {
             <div className="space-y-6">
               <div className="relative rounded-3xl overflow-hidden aspect-[3/4] shadow-2xl">
                 <Image
-                  src="/images/amanda-headshot.jpg"
+                  src={img("/images/amanda-headshot.jpg")}
                   alt="Dr. Amanda Gretsch, PhD, MS, OTR/L — Occupational Therapist in Encinitas, CA"
                   fill
                   className="object-cover object-center"

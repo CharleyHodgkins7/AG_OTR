@@ -32,6 +32,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /AG_OTR
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

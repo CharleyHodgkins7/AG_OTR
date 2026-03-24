@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, Clock, Heart } from "lucide-react";
+import { img } from "@/lib/imagePath";
 
 export default function AboutPreview() {
   return (
@@ -11,7 +12,7 @@ export default function AboutPreview() {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
                 <Image
-                src="/images/amanda-headshot.jpg"
+                src={img("/images/amanda-headshot.jpg")}
                 alt="Dr. Amanda Gretsch, PhD, MS, OTR/L"
                 fill
                 className="object-cover object-center"
