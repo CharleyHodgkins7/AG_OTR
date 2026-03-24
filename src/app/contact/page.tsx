@@ -141,23 +141,33 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              {/* Map */}
-              <div className="rounded-2xl overflow-hidden border border-[var(--border)] shadow-sm">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.8497506248!2d-117.29518!3d33.0369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0b6e6d3b3b3b%3A0x0!2s543+Encinitas+Blvd%2C+Encinitas%2C+CA+92024!5e0!3m2!1sen!2sus!4v1700000000000"
-                  width="100%"
-                  height="250"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Amanda J Gretsch, Inc. — 543 Encinitas Blvd, Encinitas CA"
-                />
-              </div>
+              {/* Directions link */}
+              <a
+                href="https://maps.google.com/?q=543+Encinitas+Blvd+Suite+114+Encinitas+CA+92024"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 border-2 border-[var(--teal)] text-[var(--teal)] hover:bg-[var(--teal)] hover:text-white font-semibold px-6 py-3 rounded-full text-sm transition-all font-inter"
+              >
+                Get Directions in Google Maps
+              </a>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Full-width map */}
+      <div className="h-96 w-full relative border-t border-[var(--border)]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.8497506248!2d-117.29518!3d33.0369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0b6e6d3b3b3b%3A0x0!2s543+Encinitas+Blvd%2C+Encinitas%2C+CA+92024!5e0!3m2!1sen!2sus!4v1700000000000"
+          width="100%"
+          height="100%"
+          style={{ border: 0, position: "absolute", inset: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Amanda J Gretsch, Inc. — 543 Encinitas Blvd, Encinitas CA"
+        />
+      </div>
     </>
   );
 }

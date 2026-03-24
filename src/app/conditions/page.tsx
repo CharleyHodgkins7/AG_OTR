@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ConditionAccordion from "@/components/ui/ConditionAccordion";
-import InlineCTA from "@/components/ui/InlineCTA";
 
 export const metadata: Metadata = {
   title: "Diagnoses & Conditions We Treat",
@@ -48,13 +47,6 @@ export default function ConditionsPage() {
 
           <ConditionAccordion />
 
-          <div className="mt-16">
-            <InlineCTA
-              title="Not sure if we're the right fit?"
-              subtitle="A free 15-minute consultation is a no-obligation way to find out."
-              variant="teal"
-            />
-          </div>
         </div>
       </section>
     </>

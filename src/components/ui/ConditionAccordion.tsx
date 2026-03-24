@@ -51,7 +51,7 @@ export default function ConditionAccordion() {
                 aria-expanded={isOpen}
               >
                 <div className="flex items-center gap-4">
-                  <span className="text-3xl flex-shrink-0">{condition.icon}</span>
+                  <div className="w-2 h-2 rounded-full bg-[var(--teal)] flex-shrink-0" />
                   <div>
                     <h3 className="font-playfair text-xl font-semibold text-[var(--charcoal)]">
                       {condition.fullTitle}

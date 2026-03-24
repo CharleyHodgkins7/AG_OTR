@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Award, BookOpen, Heart, MapPin, Star, ArrowRight } from "lucide-react";
-import InlineCTA from "@/components/ui/InlineCTA";
 import { CREDENTIALS } from "@/lib/siteData";
 
 export const metadata: Metadata = {
@@ -69,12 +68,11 @@ export default function AboutPage() {
             {/* Images */}
             <div className="space-y-6">
               <div className="relative rounded-3xl overflow-hidden aspect-[3/4] shadow-2xl">
-                {/* 🚩 PLACEHOLDER: Replace with Dr. Amanda's real professional headshot */}
                 <Image
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=85"
+                  src="/images/amanda-headshot.jpg"
                   alt="Dr. Amanda Gretsch, PhD, MS, OTR/L — Occupational Therapist in Encinitas, CA"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                   unoptimized
                 />
               </div>
@@ -103,8 +101,6 @@ export default function AboutPage() {
               {/* Teddy caption */}
               <p className="text-[var(--text-muted)] text-xs font-inter text-center italic">
                 Teddy often joins Dr. Amanda at the clinic, providing comfort and therapeutic support.
-                <br />
-                <span className="text-[var(--teal)]">🚩 Replace with real photo of Teddy!</span>
               </p>
             </div>
 
@@ -253,16 +249,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[var(--off-white)] py-16 border-t border-[var(--border)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <InlineCTA
-            title="Let's Work Together"
-            subtitle="Get in touch so we can start working together. Free 15-minute consultation."
-            variant="teal"
-          />
-        </div>
-      </section>
     </>
   );
 }

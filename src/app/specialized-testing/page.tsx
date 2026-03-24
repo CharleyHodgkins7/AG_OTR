@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import InlineCTA from "@/components/ui/InlineCTA";
 import { TESTING } from "@/lib/siteData";
 
 export const metadata: Metadata = {
@@ -75,9 +74,6 @@ export default function SpecializedTestingPage() {
                     unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)]/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="text-3xl">{test.icon}</span>
-                  </div>
                 </div>
 
                 {/* Content */}
@@ -140,13 +136,6 @@ export default function SpecializedTestingPage() {
             </div>
           </div>
 
-          <div className="mt-12">
-            <InlineCTA
-              title="Ready to start with a comprehensive evaluation?"
-              subtitle="Contact us for a free 15-minute consultation to discuss which assessments may be right for you."
-              variant="teal"
-            />
-          </div>
         </div>
       </section>
     </>

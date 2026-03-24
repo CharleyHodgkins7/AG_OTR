@@ -107,7 +107,6 @@ export const CONDITIONS = [
 ADHD affects children, teens, and adults, and its impact can vary from mild to significant, influencing performance at school, work, and in relationships. The condition is linked to differences in brain networks involved in attention, executive functioning, and self-regulation — and with the right support, individuals with ADHD can thrive.`,
     treatment:
       "Treatment may include behavioral strategies, skill-building interventions, neurofeedback (a specialized type of biofeedback), neurostimulation, occupational therapy, mindfulness practices, and collaboration with medical providers when appropriate.",
-    icon: "⚡",
   },
   {
     slug: "anxiety",
@@ -120,7 +119,6 @@ ADHD affects children, teens, and adults, and its impact can vary from mild to s
 Symptoms may include restlessness, racing thoughts, muscle tension, irritability, difficulty concentrating, rapid heartbeat, and trouble sleeping. Anxiety can present in many forms — such as generalized anxiety disorder (GAD), social anxiety, panic disorder, or specific phobias — and may co-occur with ADHD, depression, or other conditions.`,
     treatment:
       "Effective support often includes skill-building interventions, mindfulness training, CBT, biofeedback, neurofeedback, neurostimulation, and lifestyle strategies to help regulate the nervous system.",
-    icon: "🌊",
   },
   {
     slug: "asd",
@@ -133,7 +131,6 @@ Symptoms may include restlessness, racing thoughts, muscle tension, irritability
 ASD is described as a "spectrum" because it presents differently in each individual — ranging from subtle differences in social interaction to more significant support needs. Many individuals with ASD also have unique strengths, such as strong visual thinking, attention to detail, and creativity.`,
     treatment:
       "Interventions may include occupational therapy, social skills training, sensory integration therapy, executive function training, and biofeedback and neurofeedback to support self-regulation and overall functioning.",
-    icon: "🧩",
   },
   {
     slug: "depression",
@@ -146,7 +143,6 @@ ASD is described as a "spectrum" because it presents differently in each individ
 Depression can range from mild to severe and may be triggered by life events, medical conditions, or changes in brain chemistry. It can affect individuals of all ages and often co-occurs with other concerns such as anxiety, ADHD, or neurological injuries.`,
     treatment:
       "Treatment may include evidence-based approaches such as CBT, mindfulness-based interventions, lifestyle modifications, biofeedback, neurofeedback, neurostimulation, and collaboration with medical providers when appropriate.",
-    icon: "🌱",
   },
   {
     slug: "tbi",
@@ -159,7 +155,6 @@ Depression can range from mild to severe and may be triggered by life events, me
 A concussion is a mild form of TBI and is one of the most common brain injuries. Post-Concussive Syndrome (PCS) occurs when concussion symptoms last longer than expected — often weeks or months — and may include ongoing headaches, cognitive difficulties, mood changes, light or noise sensitivity, and fatigue.`,
     treatment:
       "Rehabilitation may include occupational therapy, cognitive rehabilitation, vestibular therapy, biofeedback, neurofeedback, neurostimulation, and mindfulness interventions.",
-    icon: "🧠",
   },
   {
     slug: "sensory",
@@ -172,7 +167,6 @@ A concussion is a mild form of TBI and is one of the most common brain injuries.
 Sensory processing dysfunctions are commonly seen in individuals with autism spectrum disorder, ADHD, anxiety, learning disabilities, and neurological injuries, but can occur in anyone.`,
     treatment:
       "Occupational therapy and sensory integration-based interventions provide structured, individualized activities that support the nervous system in processing input more effectively.",
-    icon: "✨",
   },
   {
     slug: "learning-disabilities",
@@ -185,7 +179,6 @@ Sensory processing dysfunctions are commonly seen in individuals with autism spe
 Individuals with learning disabilities may struggle with academic performance, organization, or processing speed, despite having average or above-average intelligence.`,
     treatment:
       "Assessment and targeted interventions — including occupational therapy, executive function training, cognitive skills training, biofeedback, and neurofeedback — can help individuals reach their full potential.",
-    icon: "📚",
   },
   {
     slug: "cognitive-decline",
@@ -198,7 +191,6 @@ Individuals with learning disabilities may struggle with academic performance, o
 While some mild changes are common with age, significant or rapid decline can affect independence, confidence, and quality of life. Early intervention can slow progression, strengthen remaining abilities, and support brain health.`,
     treatment:
       "Services may include cognitive skills training, executive function training, biofeedback and neurofeedback, lifestyle and stress management strategies, and collaboration with medical providers.",
-    icon: "🔮",
   },
   {
     slug: "executive-function",
@@ -211,7 +203,6 @@ While some mild changes are common with age, significant or rapid decline can af
 Executive function difficulties are common in ADHD, autism spectrum disorder, learning disabilities, anxiety, depression, traumatic brain injuries, and neurological conditions — but can affect anyone under stress or after significant life changes.`,
     treatment:
       "Support may include skill-building interventions, environmental strategies, cognitive training, occupational therapy, executive function coaching, biofeedback, neurofeedback, and mindfulness practices.",
-    icon: "🎯",
   },
   {
     slug: "neurological",
@@ -224,7 +215,6 @@ Executive function difficulties are common in ADHD, autism spectrum disorder, le
 Symptoms may include tremors, muscle stiffness, balance problems, memory loss, difficulty concentrating, speech or communication challenges, and changes in mood or emotional regulation.`,
     treatment:
       "Individualized interventions may include functional skill training, cognitive rehabilitation, biofeedback and neurofeedback, sensory integration and motor coordination training, stress management, and mindfulness.",
-    icon: "🔬",
   },
   {
     slug: "optimal-functioning",
@@ -237,7 +227,6 @@ Symptoms may include tremors, muscle stiffness, balance problems, memory loss, d
 Even individuals without a formal diagnosis can benefit from strategies that enhance brain efficiency, resilience, and performance.`,
     treatment:
       "Customized programs may include neurofeedback and biofeedback, cognitive skills training, executive function coaching, mindfulness, and performance optimization strategies for school, work, sports, or creative pursuits.",
-    icon: "🏆",
   },
   {
     slug: "menopause",
@@ -250,7 +239,6 @@ Even individuals without a formal diagnosis can benefit from strategies that enh
 These changes can impact quality of life, relationships, work performance, and emotional well-being.`,
     treatment:
       "Individualized, evidence-based support may include stress management, biofeedback and neurofeedback, cognitive and executive function training, lifestyle strategies, and collaboration with medical providers.",
-    icon: "🌸",
   },
 ];
 
@@ -383,42 +371,36 @@ export const TESTING = [
     subtitle: "Quantitative Electroencephalogram",
     description:
       "An advanced, non-invasive tool that measures and analyzes the brain's electrical activity. Small sensors placed on the scalp record brainwave patterns, which are then compared to a large database of age-typical brain activity to identify patterns linked to ADHD, ASD, anxiety, depression, TBI, and other neurological concerns.",
-    icon: "🧠",
   },
   {
     title: "Event Related Potential (ERP)",
     subtitle: "Brainwave Response Testing",
     description:
       "A safe, non-invasive assessment that measures how the brain processes information in response to specific stimuli — such as sounds or images. Analyzes the timing and strength of the brain's responses to provide insight into attention, memory, processing speed, and sensory integration.",
-    icon: "⚡",
   },
   {
     title: "Motor Skills Testing",
     subtitle: "Gross & Fine Motor Assessment",
     description:
       "A comprehensive assessment of how the brain and body work together to plan, coordinate, and execute movement — including both gross motor skills (balance, coordination, core strength) and fine motor skills (handwriting, dexterity, finger control).",
-    icon: "🎯",
   },
   {
     title: "Executive Function Testing",
     subtitle: "Cognitive Control Assessment",
     description:
       "A comprehensive assessment of the brain-based skills that help manage daily life — including planning, organizing, time management, working memory, emotional regulation, and flexible thinking. Identifies strengths and challenges in cognitive control, attention, problem-solving, and self-regulation.",
-    icon: "📋",
   },
   {
     title: "Sensory Processing Testing",
     subtitle: "Sensory Integration Evaluation",
     description:
       "Evaluates how the nervous system receives, interprets, and responds to information from the senses — including sight, sound, touch, movement, taste, and smell. Identifies whether the brain is over- or under-responsive to sensory input or has difficulty integrating sensory information.",
-    icon: "✨",
   },
   {
     title: "Cognitive Skills Testing",
     subtitle: "Comprehensive Cognitive Assessment",
     description:
       "A comprehensive assessment of the mental processes the brain uses to take in, understand, and respond to information — including attention, memory, processing speed, reasoning, problem-solving, and visual-spatial abilities.",
-    icon: "🔬",
   },
 ];
 

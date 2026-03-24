@@ -10,12 +10,11 @@ export default function AboutPreview() {
           {/* Image */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
-              {/* 🚩 PLACEHOLDER: Replace with Dr. Amanda's professional headshot */}
-              <Image
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=85"
+                <Image
+                src="/images/amanda-headshot.jpg"
                 alt="Dr. Amanda Gretsch, PhD, MS, OTR/L"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--teal-dark)]/30 to-transparent" />

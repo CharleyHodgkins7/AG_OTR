@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import InlineCTA from "@/components/ui/InlineCTA";
 import { TREATMENTS } from "@/lib/siteData";
 
 export const metadata: Metadata = {
@@ -159,16 +158,6 @@ export default function TreatmentsPage() {
         ))}
       </div>
 
-      {/* Bottom CTA */}
-      <section className="bg-[var(--off-white)] py-16 border-t border-[var(--border)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <InlineCTA
-            title="Ready to find the right intervention for you?"
-            subtitle="Every client starts with a comprehensive evaluation. Contact us for a free 15-minute consultation."
-            variant="teal"
-          />
-        </div>
-      </section>
     </>
   );
 }

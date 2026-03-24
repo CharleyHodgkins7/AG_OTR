@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import InlineCTA from "@/components/ui/InlineCTA";
 
 export const metadata: Metadata = {
   title: "Occupational Therapy, Biofeedback & Neurofeedback",
@@ -25,19 +24,16 @@ const WHO_WE_SERVE = [
     label: "Children",
     description:
       "Supporting school success, sensory challenges, developmental delays, ADHD, and ASD.",
-    icon: "🧒",
   },
   {
     label: "Teenagers",
     description:
       "Helping teens navigate anxiety, executive function challenges, social communication, and academic demands.",
-    icon: "🧑",
   },
   {
     label: "Adults",
     description:
       "Addressing recovery from brain injury, cognitive decline, anxiety, depression, and peak performance goals.",
-    icon: "🧓",
   },
 ];
 
@@ -80,7 +76,7 @@ export default function OccupationalTherapyPage() {
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
                 {/* 🚩 PLACEHOLDER: Replace with Dr. Amanda in session / clinic photo */}
-                <Image
+              <Image
                   src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85"
                   alt="Dr. Amanda Gretsch providing occupational therapy"
                   fill
@@ -102,7 +98,6 @@ export default function OccupationalTherapyPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {WHO_WE_SERVE.map((item) => (
               <div key={item.label} className="bg-white/10 border border-white/20 rounded-2xl p-7 text-white">
-                <span className="text-4xl mb-4 block">{item.icon}</span>
                 <h3 className="font-playfair text-xl font-semibold mb-2">{item.label}</h3>
                 <p className="text-white/75 font-inter text-sm leading-relaxed">{item.description}</p>
               </div>
@@ -296,16 +291,6 @@ export default function OccupationalTherapyPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="bg-[var(--off-white)] py-16 border-t border-[var(--border)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <InlineCTA
-            title="Ready to start your personalized care plan?"
-            subtitle="Every journey begins with a comprehensive evaluation. Contact us for a free 15-minute consultation."
-            variant="teal"
-          />
-        </div>
-      </section>
     </>
   );
 }

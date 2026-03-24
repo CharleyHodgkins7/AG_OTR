@@ -18,9 +18,8 @@ export default function ConditionsStrip() {
             <Link
               key={condition.slug}
               href={`/conditions#${condition.slug}`}
-              className="group flex flex-col items-center gap-2 bg-white rounded-xl p-4 border border-[var(--border)] hover:border-[var(--teal-light)] hover:shadow-md transition-all duration-200 text-center"
+              className="group flex items-center justify-center bg-white rounded-xl px-3 py-3 border border-[var(--border)] hover:border-[var(--teal-light)] hover:shadow-md transition-all duration-200 text-center"
             >
-              <span className="text-2xl">{condition.icon}</span>
               <span className="text-xs font-semibold font-inter text-[var(--charcoal)] group-hover:text-[var(--teal)] transition-colors leading-tight">
                 {condition.title}
               </span>
