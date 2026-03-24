@@ -106,7 +106,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <Navbar />
-        <main className="pb-[72px] md:pb-0">{children}</main>
+        <main>{children}</main>
         <Footer />
         <MobileCTA />
       </body>
