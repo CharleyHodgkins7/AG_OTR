@@ -34,6 +34,7 @@ export const CREDENTIALS = [
 ];
 
 export const TRUST_STRIP = [
+  "#1 Best OT in Encinitas 2026",
   "PhD, Applied Psychophysiology",
   "OTR/L Licensed",
   "25+ Years Experience",

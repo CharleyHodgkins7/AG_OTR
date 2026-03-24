@@ -61,6 +61,31 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Award Banner */}
+      <section className="bg-[var(--teal-dark)] py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-3">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#F4845F" stroke="#F4845F" strokeWidth="1"/>
+            </svg>
+            <div>
+              <p className="text-white font-semibold font-inter text-sm leading-tight">
+                #1 Best Occupational Therapist in Encinitas · 2026
+              </p>
+              <p className="text-white/60 text-xs font-inter">Quality Business Awards · Top 1% of US businesses · 95%+ quality score</p>
+            </div>
+          </div>
+          <a
+            href="https://qualitybusinessawards.com/2026/the-best-Occupational-Therapist-in-Encinitas-California/Amanda-J-Gretsch-Inc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 text-xs font-semibold font-inter text-[var(--cta-orange)] border border-[var(--cta-orange)]/50 px-4 py-1.5 rounded-full hover:bg-[var(--cta-orange)]/10 transition-colors"
+          >
+            View Award
+          </a>
+        </div>
+      </section>
+
       {/* Main Bio Section */}
       <section className="bg-[var(--off-white)] py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,6 +152,18 @@ export default function AboutPage() {
 
               {/* Credential Badges */}
               <div className="mt-8 flex flex-wrap gap-3">
+                {/* Award pill */}
+                <a
+                  href="https://qualitybusinessawards.com/2026/the-best-Occupational-Therapist-in-Encinitas-California/Amanda-J-Gretsch-Inc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-[var(--teal)] text-white text-sm font-inter font-semibold px-4 py-2 rounded-full hover:bg-[var(--teal-dark)] transition-colors"
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  #1 Best OT in Encinitas 2026
+                </a>
                 {CREDENTIALS.map((c) => (
                   <span
                     key={c}
