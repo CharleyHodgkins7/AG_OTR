@@ -1,8 +1,8 @@
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 /**
- * Prepends the basePath to local image paths so they resolve correctly
- * on both localhost and GitHub Pages (/AG_OTR/...).
+ * Prepends basePath to local image paths.
+ * basePath is empty on Vercel (production) and can be set via env for other hosts.
  */
 export function img(src: string): string {
   if (src.startsWith("http")) return src;

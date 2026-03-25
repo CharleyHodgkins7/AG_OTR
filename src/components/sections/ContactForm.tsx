@@ -3,10 +3,7 @@
 import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
-// 🚩 PLACEHOLDER: Replace FORMSPREE_ID with your real Formspree form ID
-// Sign up at https://formspree.io, create a form pointed at amandajaneotr@yahoo.com
-// Then replace "YOUR_FORM_ID" with the actual ID (e.g., "xrgwlkpz")
-const FORMSPREE_ID = "YOUR_FORM_ID";
+const FORMSPREE_ID = "xwvwklep";
 const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
 
 const REFERRAL_SOURCES = [

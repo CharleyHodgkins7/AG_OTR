@@ -6,7 +6,7 @@ import MobileCTA from "@/components/layout/MobileCTA";
 import { SITE } from "@/lib/siteData";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+  metadataBase: new URL("https://www.amandagretschot.com"),
   title: {
     default: "Amanda J Gretsch, Inc. | Occupational Therapist | Encinitas, CA",
     template: "%s | Amanda J Gretsch, Inc.",
