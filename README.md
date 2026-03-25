@@ -1,15 +1,38 @@
 # Amanda J Gretsch, Inc. — Website
 
-Premium Next.js website for [Amanda J Gretsch, Inc.](https://www.amandagretschot.com) — occupational therapist, neurofeedback, and biofeedback specialist in Encinitas, CA.
+**Status: Live at [amandagretschot.com](https://www.amandagretschot.com)**
+
+Premium Next.js website for Amanda J Gretsch, Inc. — occupational therapist, neurofeedback, and biofeedback specialist in Encinitas, CA.
+
+---
 
 ## Tech Stack
 
-- **Next.js 15** (App Router, static export)
-- **TypeScript**
-- **Tailwind CSS**
-- **Lucide React** (icons)
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 15 (App Router, static export) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Icons | Lucide React |
+| Forms | Formspree (`xwvwklep`) |
+| Hosting | Vercel (free tier) |
+| Domain | Registered at Wix → DNS pointed to Vercel |
+| CI/CD | GitHub Actions → auto-deploy on push to `main` |
 
-## Development
+---
+
+## How Deployments Work
+
+Every `git push` to `main` triggers two things automatically:
+
+1. **GitHub Actions** (`.github/workflows/deploy.yml`) — builds and deploys to GitHub Pages at `CharleyHodgkins7.github.io/AG_OTR` (kept as a backup/preview URL)
+2. **Vercel** — watches the GitHub repo, auto-deploys to `amandagretschot.com` within ~1 minute
+
+**In practice:** make changes → push to `main` → live on `amandagretschot.com` within 60 seconds. No manual deploy steps.
+
+---
+
+## Local Development
 
 ```bash
 npm install
@@ -18,76 +41,91 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Build
-
 ```bash
-npm run build
+npm run build   # builds static output to /out
 ```
 
-Output is in the `out/` directory (static HTML/CSS/JS — ready for any static host).
+---
+
+## How the Contact Form Works
+
+Form submissions on `/contact` go to **Formspree** (ID: `xwvwklep`) which emails them to `amandajaneotr@yahoo.com`.
+
+- Form code: `src/components/sections/ContactForm.tsx`
+- To change the destination email: log in at [formspree.io](https://formspree.io) → edit the form settings
+- To change the form ID: update `FORMSPREE_ID` in `ContactForm.tsx`
 
 ---
 
-## Deployment
+## How the Domain Works
 
-### GitHub Pages (Current)
+```
+amandagretschot.com
+    │
+    ├── Registered at: Wix (pay domain renewal ~$15-20/yr)
+    │
+    └── DNS A record → 216.198.79.1 (Vercel)
+        DNS CNAME www → 2814ed7c6c8b41ae.vercel-dns-017.com (Vercel)
+```
 
-Deployment is automatic via GitHub Actions on every push to `main`.
+To update DNS: Wix dashboard → Domains → amandagretschot.com → Manage DNS.
 
-**One-time setup:**
-1. Go to your repo on GitHub → **Settings** → **Pages**
-2. Under **Source**, select **GitHub Actions**
-3. Push to `main` — the workflow in `.github/workflows/deploy.yml` handles the rest
-
-Your site will be live at: `https://CharleyHodgkins7.github.io/AG_OTR/`
-
-> **Note:** If deploying to a subdirectory (not a custom domain), add `basePath: '/AG_OTR'` to `next.config.ts`.
-
-### Vercel (Recommended for Production)
-
-Migrating to Vercel is zero-config:
-
-1. Go to [vercel.com](https://vercel.com) → **New Project**
-2. Import the `AG_OTR` GitHub repo
-3. Vercel auto-detects Next.js — no configuration needed
-4. Set your custom domain (`amandagretschot.com`) in Vercel dashboard
-5. **Remove** `output: 'export'` from `next.config.ts` to unlock server features (ISR, API routes, etc.)
+**Do not cancel the Wix domain registration** — only the Wix premium site plan can be cancelled.
 
 ---
 
-## 🚩 Placeholder Images — Action Required
+## How Content Works
 
-All placeholder images are marked with `// 🚩 PLACEHOLDER` comments in the code.
+All site text lives in **`src/lib/siteData.ts`**:
+- Contact info, phone, address, email
+- Credentials and trust strip items
+- Testimonials
+- Services overview
+- All 12 conditions (with full descriptions)
+- All 15+ treatment modalities (grouped by category)
+- 6 specialized testing types
+- 3-step process
 
-| File | Image to Replace |
-|---|---|
-| `src/components/sections/Hero.tsx` | Hero background — Encinitas beach or clinic exterior |
-| `src/components/sections/AboutPreview.tsx` | Dr. Amanda headshot (main) |
-| `src/app/about/page.tsx` | Dr. Amanda headshot, Dr. Amanda with patient, Teddy the dog |
-| `src/app/occupational-therapy/page.tsx` | Clinic / session photos (5 images) |
-| `src/app/specialized-testing/page.tsx` | 6 testing card images |
-| `src/app/treatments/page.tsx` | 5 category images |
-| `src/app/conditions/page.tsx` | Hero background |
-
-To replace: drop your photos into `public/images/` and update the `src=` values, removing the `// 🚩 PLACEHOLDER` comment.
+Edit `siteData.ts` to update content across the whole site at once.
 
 ---
 
-## 📬 Contact Form Setup (Formspree)
+## How Images Work
 
-The contact form uses [Formspree](https://formspree.io) for static-compatible form submissions.
+Local images live in `public/images/` and are referenced using the `img()` helper from `src/lib/imagePath.ts` (handles path prefixing for different hosting environments).
 
-1. Sign up at [formspree.io](https://formspree.io)
-2. Create a new form — set the email to `amandajaneotr@yahoo.com`
-3. Copy your form ID (looks like `xrgwlkpz`)
-4. Open `src/components/sections/ContactForm.tsx`
-5. Replace `YOUR_FORM_ID` with your actual form ID
+**Current real images:**
+
+| File | Used On |
+|------|---------|
+| `amanda-headshot.jpg` | Homepage About Preview, About page |
+| `amanda-with-child.png` | About page image grid |
+| `teddy.png` | About page image grid |
+| `encinitas-beach.png` | Hero background, OT Services page |
+| `amanda-neurofeedback.png` | Treatments page — Neurostimulation section |
+| `cognitive-skills.png` | Specialized Testing page hero |
+
+**Remaining placeholders** (Unsplash) — marked with `// 🚩 PLACEHOLDER` in code:
+
+| Location | Needed |
+|----------|--------|
+| About page hero background | Encinitas/clinic exterior |
+| About page — "with patient" small grid | Clinic session photo |
+| OT page — assessment section | Clinic interior |
+| Treatments — Biofeedback category | Equipment photo |
+| Treatments — Sensory/Motor category | Therapy session |
+| Treatments — Psychotherapy category | Session photo |
+| Treatments — Skills Training category | Work session |
+| Specialized Testing — card images (6) | Testing room / assessment photos |
+| Conditions page hero | Background photo |
+
+To replace: drop file in `public/images/`, update `src={img("/images/yourfile.jpg")}` in the relevant component.
 
 ---
 
-## 📱 Social Media Links
+## Social Media Links
 
-Update social handles in `src/lib/siteData.ts`:
+Currently set to placeholder URLs. Update in `src/lib/siteData.ts`:
 
 ```ts
 social: {
@@ -102,16 +140,47 @@ social: {
 ## Site Structure
 
 ```
-/                    Homepage
-/about               Dr. Amanda bio, credentials, personal story
-/conditions          All 12 diagnoses (accordion)
-/treatments          All 15+ treatment modalities
-/specialized-testing QEEG, ERP, Motor, Executive Function, Sensory, Cognitive
+/                     Homepage (Hero, About Preview, Services, Conditions, Testimonials, Process)
+/about                Dr. Amanda bio, credentials, advanced training, personal story
+/conditions           All 12 diagnoses with expandable accordion details
+/treatments           15+ treatment modalities grouped by category
+/specialized-testing  QEEG, ERP, Motor, Executive Function, Sensory, Cognitive testing
 /occupational-therapy OT overview, biofeedback, neurofeedback, neurostimulation
-/contact             Contact form + map + phone
-/policies            Practice policies
+/contact              Contact form (Formspree) + phone/email + Google Maps embed
+/policies             Payment, cancellation, Good Faith Estimate, HIPAA notice
 ```
 
-## Content Data
+---
 
-All site content lives in `src/lib/siteData.ts` — conditions, treatments, testimonials, services, process steps, credentials. Edit there to update content site-wide.
+## Key Components
+
+| Component | Purpose |
+|-----------|---------|
+| `src/components/layout/Navbar.tsx` | Sticky nav, Services dropdown, mobile hamburger |
+| `src/components/layout/Footer.tsx` | CTA strip, nav links, contact info, social icons |
+| `src/components/layout/MobileCTA.tsx` | Floating Call + Free Consult pill (mobile only, appears on scroll) |
+| `src/components/sections/Hero.tsx` | Full-bleed homepage hero with trust pills and CTA |
+| `src/components/sections/AboutPreview.tsx` | Homepage "Meet Dr. Amanda" section |
+| `src/components/sections/ContactForm.tsx` | Formspree-connected contact form |
+
+---
+
+## SEO
+
+- Per-page `metadata` in each `page.tsx`
+- `MedicalBusiness` JSON-LD schema in `layout.tsx` with verified coordinates (33.045753, -117.2805166)
+- `sitemap.ts` → auto-generates `/sitemap.xml`
+- `robots.ts` → auto-generates `/robots.txt`
+- OpenGraph + Twitter card meta on all pages
+- Canonical base URL: `https://www.amandagretschot.com`
+
+---
+
+## Roadmap
+
+- [ ] SEO — Google Search Console setup, keyword optimization
+- [ ] LLM search optimization — structured content for AI answer engines
+- [ ] Google Ads — Search + Maps campaign setup
+- [ ] Replace remaining placeholder images
+- [ ] Update social media links with real handles
+- [ ] Google Reviews integration / widget
