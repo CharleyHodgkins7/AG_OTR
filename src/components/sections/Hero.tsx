@@ -2,15 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, ArrowRight, ChevronDown } from "lucide-react";
 import { SITE, TRUST_STRIP } from "@/lib/siteData";
+import { img } from "@/lib/imagePath";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col">
       {/* Background Image */}
-      {/* 🚩 PLACEHOLDER: Replace with Encinitas beach / clinic exterior photo */}
-      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=85"
+          src={img("/images/encinitas-beach.png")}
           alt="Encinitas coastal view"
           fill
           className="object-cover object-center"

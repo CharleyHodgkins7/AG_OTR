@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { TESTING } from "@/lib/siteData";
+import { img } from "@/lib/imagePath";
 
 export const metadata: Metadata = {
   title: "Specialized Testing — QEEG, ERP, Executive Function & More",
@@ -31,12 +32,11 @@ export default function SpecializedTestingPage() {
       {/* Hero */}
       <section className="relative pt-24 pb-16 bg-[var(--teal)] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          {/* 🚩 PLACEHOLDER: Replace with testing/assessment room photo */}
           <Image
-            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&q=50"
-            alt=""
+            src={img("/images/cognitive-skills.png")}
+            alt="Cognitive skills assessment — attention, memory, perception, logic, processing, mobility"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             unoptimized
           />
         </div>

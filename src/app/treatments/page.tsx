@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { TREATMENTS } from "@/lib/siteData";
+import { img } from "@/lib/imagePath";
 
 export const metadata: Metadata = {
   title: "Treatments & Interventions",
@@ -15,8 +16,7 @@ const CATEGORY_IMAGES: Record<string, string> = {
     // 🚩 PLACEHOLDER: Replace with neurofeedback/biofeedback equipment photo
     "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=85",
   "Neurostimulation":
-    // 🚩 PLACEHOLDER: Replace with neurostimulation/brain technology photo
-    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85",
+    "/images/amanda-neurofeedback.png",
   "Sensory, Motor & Sound Therapies":
     // 🚩 PLACEHOLDER: Replace with sensory/OT therapy photo
     "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&q=85",
@@ -124,7 +124,7 @@ export default function TreatmentsPage() {
                 <div className={ci % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
                     <Image
-                      src={CATEGORY_IMAGES[cat.category]}
+                      src={img(CATEGORY_IMAGES[cat.category])}
                       alt={CATEGORY_ALT[cat.category]}
                       fill
                       className="object-cover"

@@ -27,7 +27,7 @@ export const SITE = {
 export const CREDENTIALS = [
   "PhD, Applied Psychophysiology",
   "MS, Occupational Therapy",
-  "OTR/L Licensed",
+  "Licensed OTR/L",
   "25+ Years Experience",
   "18+ Years Private Practice",
   "1:1 Direct Care — Always",
@@ -36,7 +36,7 @@ export const CREDENTIALS = [
 export const TRUST_STRIP = [
   "#1 Best OT in Encinitas 2026",
   "PhD, Applied Psychophysiology",
-  "OTR/L Licensed",
+  "Licensed OTR/L",
   "25+ Years Experience",
   "18+ Years Private Practice",
   "1:1 Direct Care",

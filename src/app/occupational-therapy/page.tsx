@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { img } from "@/lib/imagePath";
 
 export const metadata: Metadata = {
   title: "Occupational Therapy, Biofeedback & Neurofeedback",
@@ -75,12 +76,11 @@ export default function OccupationalTherapyPage() {
             </div>
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
-                {/* 🚩 PLACEHOLDER: Replace with Dr. Amanda in session / clinic photo */}
               <Image
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85"
-                  alt="Dr. Amanda Gretsch providing occupational therapy"
+                  src={img("/images/encinitas-beach.png")}
+                  alt="Encinitas, CA — home of Amanda J Gretsch, Inc."
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   unoptimized
                 />
               </div>
