@@ -114,12 +114,11 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="relative rounded-2xl overflow-hidden aspect-square shadow-lg">
-                  {/* 🚩 PLACEHOLDER: Replace with photo of Teddy the dog at the clinic */}
                   <Image
-                    src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=85"
+                    src={img("/images/teddy.png")}
                     alt="Teddy, Dr. Amanda's dog who joins at the clinic for therapeutic support"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     unoptimized
                   />
                 </div>
