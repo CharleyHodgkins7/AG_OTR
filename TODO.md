@@ -5,6 +5,16 @@ Repo: [github.com/CharleyHodgkins7/AG_OTR](https://github.com/CharleyHodgkins7/A
 
 ---
 
+## Deadlines
+
+- [ ] **Cancel Wix Premium before August renewal**
+  - Log in at [manage.wix.com](https://manage.wix.com) → Billing → Cancel plan
+  - ⚠️ Do NOT cancel the domain registration — only the premium site plan
+  - Domain (`amandagretschot.com`) must stay registered at Wix or be transferred elsewhere first
+  - Site is fully running on Vercel — Wix premium is no longer needed
+
+---
+
 ## Infrastructure
 
 - [ ] **Migrate contact form to Resend API**
