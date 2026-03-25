@@ -91,8 +91,8 @@ export default function RootLayout({
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 33.0369,
-                longitude: -117.2929,
+                latitude: 33.045753,
+                longitude: -117.2805166,
               },
               priceRange: "$$",
               openingHoursSpecification: {

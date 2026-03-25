@@ -158,7 +158,7 @@ export default function ContactPage() {
       {/* Full-width map */}
       <div className="h-96 w-full relative border-t border-[var(--border)]">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.8497506248!2d-117.29518!3d33.0369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0b6e6d3b3b3b%3A0x0!2s543+Encinitas+Blvd%2C+Encinitas%2C+CA+92024!5e0!3m2!1sen!2sus!4v1700000000000"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.0!2d-117.2805166!3d33.045753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0c6c265e4acd%3A0x597a35de3cb999ad!2sAmanda+J+Gretsch%2C+Inc.!5e0!3m2!1sen!2sus!4v1700000000000"
           width="100%"
           height="100%"
           style={{ border: 0, position: "absolute", inset: 0 }}
