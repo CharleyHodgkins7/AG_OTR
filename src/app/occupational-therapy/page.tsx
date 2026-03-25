@@ -141,11 +141,12 @@ export default function OccupationalTherapyPage() {
 
             <div className="space-y-6">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
+                {/* 🚩 PLACEHOLDER: Replace with OT assessment / clinic interior photo */}
                 <Image
-                  src={img("/images/amanda-with-child.png")}
-                  alt="Dr. Amanda Gretsch with a child in occupational therapy session"
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85"
+                  alt="Occupational therapy assessment session"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover"
                   unoptimized
                 />
               </div>

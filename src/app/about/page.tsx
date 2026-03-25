@@ -104,12 +104,11 @@ export default function AboutPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative rounded-2xl overflow-hidden aspect-square shadow-lg">
-                  {/* 🚩 PLACEHOLDER: Replace with Dr. Amanda with a patient/client in clinic */}
                   <Image
-                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=85"
-                    alt="Dr. Amanda Gretsch working with a client"
+                    src={img("/images/amanda-with-child.png")}
+                    alt="Dr. Amanda Gretsch with a child in occupational therapy session"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     unoptimized
                   />
                 </div>
