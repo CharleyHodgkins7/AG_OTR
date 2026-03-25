@@ -108,7 +108,7 @@ export default function AboutPage() {
                     src={img("/images/amanda-with-child.png")}
                     alt="Dr. Amanda Gretsch with a child in occupational therapy session"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-[25%_25%]"
                     unoptimized
                   />
                 </div>
