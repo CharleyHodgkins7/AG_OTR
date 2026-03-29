@@ -2,16 +2,46 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, ArrowRight } from "lucide-react";
 import { SITE, TRUST_STRIP } from "@/lib/siteData";
+import { img } from "@/lib/imagePath";
 
 export default function Hero() {
   return (
-    <section className="bg-[var(--teal)] flex flex-col min-h-screen">
-      {/* Main content */}
-      <div className="flex-1 flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <section className="relative flex flex-col min-h-screen">
+      {/* Beach background */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={img("/images/encinitas-beach.png")}
+          alt="Encinitas coastal view"
+          fill
+          className="object-cover object-center"
+          priority
+          unoptimized
+        />
+        {/* Dark sweep on the right half only — keeps text legible, left stays natural */}
+        <div className="absolute inset-0 bg-gradient-to-l from-[var(--charcoal)]/85 via-[var(--charcoal)]/50 to-transparent" />
+      </div>
 
-            {/* Left: Text */}
+      {/* Main content */}
+      <div className="relative z-10 flex-1 flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 items-center">
+
+            {/* Left: Image */}
+            <div className="hidden lg:flex justify-center lg:justify-start items-center">
+              <div className="relative w-[460px] h-[460px] xl:w-[520px] xl:h-[520px] overflow-hidden shadow-2xl bg-[var(--teal-light)]" style={{ borderRadius: "42% 58% 62% 38% / 45% 38% 62% 55%" }}>
+                <Image
+                  src="https://images.unsplash.com/photo-1752652011858-302f08a6dc9f?w=800&h=900&fit=crop&crop=faces,top"
+                  alt="Happy mother and daughter together"
+                  fill
+                  className="object-cover object-center"
+
+                  priority
+                  unoptimized
+                />
+              </div>
+            </div>
+
+            {/* Right: Text */}
             <div>
               {/* Eyebrow */}
               <div className="flex items-center gap-3 mb-6">
@@ -75,26 +105,13 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right: Circle image */}
-            <div className="hidden lg:flex justify-center lg:justify-end items-center">
-              <div className="relative w-[460px] h-[460px] xl:w-[520px] xl:h-[520px] rounded-full overflow-hidden ring-4 ring-white/10 shadow-2xl bg-[var(--teal-light)]">
-                <Image
-                  src="https://images.unsplash.com/photo-1576765608622-067973a79f53?w=800&h=800&fit=crop&crop=faces,top"
-                  alt="Dr. Amanda Gretsch with a patient"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                  unoptimized
-                />
-              </div>
-            </div>
 
           </div>
         </div>
       </div>
 
       {/* Trust Marquee Strip */}
-      <div className="bg-[var(--teal-dark)]/80 backdrop-blur-sm border-t border-white/10 py-3 overflow-hidden">
+      <div className="relative z-10 bg-[var(--teal-dark)]/80 backdrop-blur-sm border-t border-white/10 py-3 overflow-hidden">
         <div className="flex items-center gap-8 px-6 flex-wrap justify-center w-full">
           {TRUST_STRIP.map((item, i) => (
             <span

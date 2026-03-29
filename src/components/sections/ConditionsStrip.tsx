@@ -5,8 +5,18 @@ import { ArrowRight } from "lucide-react";
 
 export default function ConditionsStrip() {
   return (
-    <section className="bg-[var(--sand-light)] py-20 lg:py-28 border-t border-[var(--border)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      className="relative py-20 lg:py-28 border-t border-[var(--border)] overflow-hidden"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1764445578321-d11ed50fa9cf?w=1800&fit=crop')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Light overlay to keep content legible */}
+      <div className="absolute inset-0" style={{ backgroundColor: "rgba(250, 247, 240, 0.65)" }} />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Diagnoses & Conditions"
           title="We Treat a Wide Range of Conditions"
@@ -40,3 +50,4 @@ export default function ConditionsStrip() {
     </section>
   );
 }
+

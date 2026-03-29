@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import MobileCTA from "@/components/layout/MobileCTA";
 import { SITE } from "@/lib/siteData";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amandagretschot.com"),
@@ -110,6 +111,7 @@ export default function RootLayout({
         <Footer />
         <MobileCTA />
       </body>
+      <GoogleAnalytics gaId="G-T3FWF8QGFC" />
     </html>
   );
 }

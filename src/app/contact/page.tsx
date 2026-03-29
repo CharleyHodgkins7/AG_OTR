@@ -16,7 +16,7 @@ export default function ContactPage() {
       <section className="flex flex-col lg:flex-row min-h-screen">
 
         {/* Left: teal info panel */}
-        <div className="lg:w-[38%] bg-[var(--teal)] flex flex-col justify-center px-8 sm:px-12 lg:px-14 pt-28 pb-14 lg:py-0">
+        <div className="lg:w-[38%] bg-[var(--teal)] flex flex-col justify-center px-8 sm:px-12 lg:px-14 pt-36 pb-14 lg:pt-32 lg:pb-16">
           <p className="text-sm font-semibold uppercase tracking-widest text-[var(--sand)] font-inter mb-3">
             Get in Touch
           </p>

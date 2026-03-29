@@ -53,10 +53,11 @@ Repo: [github.com/CharleyHodgkins7/AG_OTR](https://github.com/CharleyHodgkins7/A
 
 ## SEO
 
-- [ ] **Google Search Console setup**
-  - Verify domain ownership at [search.google.com/search-console](https://search.google.com/search-console)
-  - Submit `amandagretschot.com/sitemap.xml`
-  - Monitor indexing, search queries, click-through rates
+- [ ] **Google Search Console setup** ← _no code changes required — do this first_
+  - Verify domain ownership at [search.google.com/search-console](https://search.google.com/search-console) (use DNS TXT record method or HTML meta tag in `layout.tsx`)
+  - Submit `https://www.amandagretschot.com/sitemap.xml`
+  - Wait 3–5 days for data to populate
+  - **What to watch:** search queries driving clicks, pages with high impressions but low CTR, any indexing errors
 
 - [ ] **SEO content optimization**
   - Keyword research: "OT Encinitas", "neurofeedback San Diego", "ADHD therapy Encinitas", etc.
@@ -111,10 +112,19 @@ Repo: [github.com/CharleyHodgkins7/AG_OTR](https://github.com/CharleyHodgkins7/A
 
 ## Tracking & Analytics
 
-- [ ] **Google Analytics 4**
-  - Create GA4 property at [analytics.google.com](https://analytics.google.com)
-  - Add GA4 measurement ID to `src/app/layout.tsx`
-  - Set up goals: form submissions, phone clicks, page views on /contact
+- [ ] **Google Analytics 4** ← _do before any ad spend_
+  - Create GA4 property at [analytics.google.com](https://analytics.google.com) → get `G-XXXXXXXXXX` Measurement ID
+  - Add GA4 script to `src/app/layout.tsx` using `@next/third-parties` (Next.js recommended method) — ask Cursor to implement this
+  - Set up **key events** (what GA4 calls conversions):
+    - Contact form submission (thank-you state or Formspree redirect)
+    - Phone number link clicks (`tel:` href clicks)
+    - `/contact` page views (high-intent signal even without form submit)
+  - **Metrics that matter for a local practice:**
+    - Contact form submissions and phone clicks (primary conversions)
+    - How many users reach `/contact` vs. how many actually submit
+    - Geographic breakdown — are visitors actually local (Encinitas/San Diego)?
+    - Device split — mobile vs. desktop (local searches skew heavily mobile)
+    - Which pages drive the most contact attempts (landing page → contact funnel)
 
 - [ ] **Meta Pixel (Facebook/Instagram)**
   - Create pixel at [business.facebook.com](https://business.facebook.com) → Events Manager
@@ -123,6 +133,7 @@ Repo: [github.com/CharleyHodgkins7/AG_OTR](https://github.com/CharleyHodgkins7/A
 
 - [ ] **Google Tag Manager (optional)**
   - Centralizes all tracking scripts — makes adding/removing tags easier without code deploys
+  - Worth doing if managing multiple pixels/scripts; skip if only using GA4
 
 - [ ] **Call tracking**
   - Consider [CallRail](https://callrail.com) or similar to track which ads/pages drive phone calls
