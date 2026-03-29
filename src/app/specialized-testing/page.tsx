@@ -70,7 +70,7 @@ export default function SpecializedTestingPage() {
                     src={TESTING_IMAGES[i]}
                     alt={test.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover motion-safe:group-hover:scale-105 transition-transform duration-500"
                     unoptimized
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)]/50 to-transparent" />

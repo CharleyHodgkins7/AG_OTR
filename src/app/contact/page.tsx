@@ -34,7 +34,7 @@ export default function ContactPage() {
                 <Phone size={18} className="text-white" />
               </div>
               <div>
-                <p className="text-white/55 text-xs font-inter uppercase tracking-wider font-semibold">Phone</p>
+                <p className="text-white/80 text-xs font-inter uppercase tracking-wider font-semibold">Phone</p>
                 <p className="text-white font-semibold font-inter group-hover:text-[var(--sand)] transition-colors">{SITE.phone}</p>
               </div>
             </a>
@@ -44,7 +44,7 @@ export default function ContactPage() {
                 <Mail size={18} className="text-white" />
               </div>
               <div>
-                <p className="text-white/55 text-xs font-inter uppercase tracking-wider font-semibold">Email</p>
+                <p className="text-white/80 text-xs font-inter uppercase tracking-wider font-semibold">Email</p>
                 <p className="text-white font-semibold font-inter text-sm break-all group-hover:text-[var(--sand)] transition-colors">{SITE.email}</p>
               </div>
             </a>
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <MapPin size={18} className="text-white" />
               </div>
               <div>
-                <p className="text-white/55 text-xs font-inter uppercase tracking-wider font-semibold">Location</p>
+                <p className="text-white/80 text-xs font-inter uppercase tracking-wider font-semibold">Location</p>
                 <address className="not-italic text-white font-inter text-sm leading-relaxed">
                   {SITE.address}<br />{SITE.city}
                 </address>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 <Clock size={18} className="text-white" />
               </div>
               <div>
-                <p className="text-white/55 text-xs font-inter uppercase tracking-wider font-semibold">Hours</p>
+                <p className="text-white/80 text-xs font-inter uppercase tracking-wider font-semibold">Hours</p>
                 <p className="text-white font-inter text-sm">Mon – Fri, by appointment</p>
               </div>
             </div>

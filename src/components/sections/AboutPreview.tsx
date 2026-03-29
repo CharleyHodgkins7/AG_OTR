@@ -47,12 +47,12 @@ export default function AboutPreview() {
             {/* Credential pills */}
             <div className="flex flex-col gap-3 mb-8">
               {[
-                { icon: <Award size={16} />, text: "PhD in Applied Psychophysiology" },
-                { icon: <Clock size={16} />, text: "25+ Years · 18+ Years Private Practice" },
-                { icon: <Heart size={16} />, text: "100% of treatment time with Dr. Amanda — always" },
+                { icon: <Award size={16} aria-hidden="true" />, text: "PhD in Applied Psychophysiology" },
+                { icon: <Clock size={16} aria-hidden="true" />, text: "25+ Years · 18+ Years Private Practice" },
+                { icon: <Heart size={16} aria-hidden="true" />, text: "100% of treatment time with Dr. Amanda — always" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[var(--teal)] flex items-center justify-center text-white flex-shrink-0">
+                  <div aria-hidden="true" className="w-8 h-8 rounded-full bg-[var(--teal)] flex items-center justify-center text-white flex-shrink-0">
                     {item.icon}
                   </div>
                   <span className="text-sm font-inter text-[var(--charcoal-light)]">{item.text}</span>
@@ -65,7 +65,7 @@ export default function AboutPreview() {
               className="inline-flex items-center gap-2 text-[var(--teal)] font-semibold font-inter hover:gap-3 transition-all group"
             >
               Full bio & credentials
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={16} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

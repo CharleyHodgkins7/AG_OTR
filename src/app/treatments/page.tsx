@@ -89,6 +89,7 @@ export default function TreatmentsPage() {
           <section
             key={cat.category}
             id={cat.category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
+            style={{ scrollMarginTop: "80px" }}
             className={`py-16 lg:py-24 ${
               ci % 2 === 1 ? "bg-[var(--sand-light)]" : "bg-[var(--off-white)]"
             } border-t border-[var(--border)]`}

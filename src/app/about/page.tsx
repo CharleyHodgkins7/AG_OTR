@@ -66,7 +66,7 @@ export default function AboutPage() {
       <section className="bg-[var(--teal-dark)] py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
           <div className="flex items-center gap-3">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+            <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#F4845F" stroke="#F4845F" strokeWidth="1"/>
             </svg>
             <div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-[var(--teal)] text-white text-sm font-inter font-semibold px-4 py-2 rounded-full hover:bg-[var(--teal-dark)] transition-colors"
                 >
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                   </svg>
                   #1 Best OT in Encinitas 2026
@@ -176,7 +176,7 @@ export default function AboutPage() {
               {/* Personal */}
               <div className="mt-10 bg-[var(--sand-light)] rounded-2xl p-6 border border-[var(--border)]">
                 <div className="flex items-start gap-3 mb-3">
-                  <MapPin size={18} className="text-[var(--teal)] mt-0.5 flex-shrink-0" />
+                  <MapPin size={18} aria-hidden="true" className="text-[var(--teal)] mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-semibold font-inter text-[var(--charcoal)] text-sm">Outside the Clinic</p>
                     <p className="text-[var(--text-muted)] text-sm font-inter leading-relaxed mt-1">
@@ -205,33 +205,33 @@ export default function AboutPage() {
               <div className="space-y-5">
                 {[
                   {
-                    icon: <Award size={20} />,
+                    icon: <Award size={20} aria-hidden="true" />,
                     label: "PhD — Applied Psychophysiology",
                     detail: "Doctoral research: effects of PEMF on irritable bowel syndrome (IBS)",
                   },
                   {
-                    icon: <BookOpen size={20} />,
+                    icon: <BookOpen size={20} aria-hidden="true" />,
                     label: "MS — Occupational Therapy",
                     detail: "Master's degree in occupational therapy",
                   },
                   {
-                    icon: <BookOpen size={20} />,
+                    icon: <BookOpen size={20} aria-hidden="true" />,
                     label: "BS — Occupational Therapy",
                     detail: "Bachelor's degree in occupational therapy",
                   },
                   {
-                    icon: <Star size={20} />,
+                    icon: <Star size={20} aria-hidden="true" />,
                     label: "OTR/L — Licensed Occupational Therapist",
                     detail: "Registered and licensed occupational therapist",
                   },
                   {
-                    icon: <Heart size={20} />,
+                    icon: <Heart size={20} aria-hidden="true" />,
                     label: "25+ Years Clinical Experience",
                     detail: "18+ years as owner-operator of private practice",
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[var(--teal)] flex items-center justify-center text-white flex-shrink-0">
+                    <div aria-hidden="true" className="w-10 h-10 rounded-xl bg-[var(--teal)] flex items-center justify-center text-white flex-shrink-0">
                       {item.icon}
                     </div>
                     <div>
@@ -268,7 +268,7 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-2 text-[var(--teal)] font-semibold font-inter text-sm hover:gap-3 transition-all"
                 >
                   Explore all treatments & interventions
-                  <ArrowRight size={15} />
+                  <ArrowRight size={15} aria-hidden="true" />
                 </Link>
               </div>
             </div>
@@ -279,9 +279,9 @@ export default function AboutPage() {
       {/* Philosophy */}
       <section className="bg-[var(--teal)] py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="font-playfair text-3xl md:text-4xl text-white italic leading-relaxed">
+          <blockquote className="font-playfair text-3xl md:text-4xl text-white italic leading-relaxed">
             &ldquo;Her passion is helping clients overcome challenges, build new skills, and improve their quality of life.&rdquo;
-          </p>
+          </blockquote>
         </div>
       </section>
 

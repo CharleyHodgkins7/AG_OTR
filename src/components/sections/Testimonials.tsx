@@ -22,44 +22,57 @@ export default function Testimonials() {
         />
 
         {/* Desktop: 3 cards */}
-        <div className="mt-12 hidden md:grid md:grid-cols-3 gap-6">
+        <div className="mt-12 hidden md:grid md:grid-cols-3 gap-6" role="list">
           {TESTIMONIALS.map((t, i) => (
             <div
               key={i}
+              role="listitem"
               className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7 flex flex-col"
             >
-              <Quote size={32} className="text-[var(--cta-orange)] mb-4 flex-shrink-0" />
-              <p className="text-white font-inter text-base leading-relaxed flex-1 italic">
+              <Quote size={32} aria-hidden="true" className="text-[var(--cta-orange)] mb-4 flex-shrink-0" />
+              <blockquote className="text-white font-inter text-base leading-relaxed flex-1 italic">
                 &ldquo;{t.quote}&rdquo;
-              </p>
+              </blockquote>
               <div className="mt-6 pt-5 border-t border-white/20">
                 <p className="text-white font-semibold font-inter">— {t.author}</p>
-                <p className="text-white/60 text-sm font-inter mt-0.5">{t.condition}</p>
+                <p className="text-white/70 text-sm font-inter mt-0.5">{t.condition}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Mobile: carousel */}
-        <div className="mt-12 md:hidden">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7">
-            <Quote size={32} className="text-[var(--cta-orange)] mb-4" />
-            <p className="text-white font-inter text-base leading-relaxed italic">
+        <div className="mt-12 md:hidden" aria-label="Testimonials carousel" aria-roledescription="carousel">
+          <div
+            aria-live="polite"
+            aria-atomic="true"
+            aria-label={`Testimonial ${active + 1} of ${TESTIMONIALS.length}`}
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7"
+          >
+            <Quote size={32} aria-hidden="true" className="text-[var(--cta-orange)] mb-4" />
+            <blockquote className="text-white font-inter text-base leading-relaxed italic">
               &ldquo;{TESTIMONIALS[active].quote}&rdquo;
-            </p>
+            </blockquote>
             <div className="mt-6 pt-5 border-t border-white/20">
               <p className="text-white font-semibold font-inter">— {TESTIMONIALS[active].author}</p>
-              <p className="text-white/60 text-sm font-inter mt-0.5">{TESTIMONIALS[active].condition}</p>
+              <p className="text-white/70 text-sm font-inter mt-0.5">{TESTIMONIALS[active].condition}</p>
             </div>
           </div>
           <div className="flex items-center justify-center gap-4 mt-6">
-            <button onClick={prev} className="bg-white/20 hover:bg-white/30 text-white p-2.5 rounded-full transition-colors">
-              <ChevronLeft size={20} />
+            <button
+              onClick={prev}
+              aria-label="Previous testimonial"
+              className="bg-white/20 hover:bg-white/30 text-white p-2.5 rounded-full transition-colors"
+            >
+              <ChevronLeft size={20} aria-hidden="true" />
             </button>
-            <div className="flex gap-2">
-              {TESTIMONIALS.map((_, i) => (
+            <div className="flex gap-2" role="tablist" aria-label="Select testimonial">
+              {TESTIMONIALS.map((t, i) => (
                 <button
                   key={i}
+                  role="tab"
+                  aria-selected={i === active}
+                  aria-label={`Testimonial ${i + 1}: ${t.author}`}
                   onClick={() => setActive(i)}
                   className={`w-2 h-2 rounded-full transition-colors ${
                     i === active ? "bg-white" : "bg-white/30"
@@ -67,8 +80,12 @@ export default function Testimonials() {
                 />
               ))}
             </div>
-            <button onClick={next} className="bg-white/20 hover:bg-white/30 text-white p-2.5 rounded-full transition-colors">
-              <ChevronRight size={20} />
+            <button
+              onClick={next}
+              aria-label="Next testimonial"
+              className="bg-white/20 hover:bg-white/30 text-white p-2.5 rounded-full transition-colors"
+            >
+              <ChevronRight size={20} aria-hidden="true" />
             </button>
           </div>
         </div>

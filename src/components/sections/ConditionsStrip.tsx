@@ -14,7 +14,7 @@ export default function ConditionsStrip() {
       }}
     >
       {/* Light overlay to keep content legible */}
-      <div className="absolute inset-0" style={{ backgroundColor: "rgba(250, 247, 240, 0.65)" }} />
+      <div className="absolute inset-0" style={{ backgroundColor: "rgba(250, 247, 240, 0.40)" }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader

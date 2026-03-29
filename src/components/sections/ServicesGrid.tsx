@@ -4,10 +4,10 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { SERVICES_OVERVIEW } from "@/lib/siteData";
 
 const ICONS: Record<string, React.ReactNode> = {
-  brain: <Brain size={28} />,
-  activity: <Activity size={28} />,
-  clipboard: <ClipboardList size={28} />,
-  zap: <Zap size={28} />,
+  brain: <Brain size={28} aria-hidden="true" />,
+  activity: <Activity size={28} aria-hidden="true" />,
+  clipboard: <ClipboardList size={28} aria-hidden="true" />,
+  zap: <Zap size={28} aria-hidden="true" />,
 };
 
 export default function ServicesGrid() {
@@ -38,7 +38,7 @@ export default function ServicesGrid() {
               </p>
               <div className="flex items-center gap-1.5 text-[var(--teal)] text-sm font-semibold font-inter group-hover:gap-2.5 transition-all">
                 Learn more
-                <ArrowRight size={15} />
+                <ArrowRight size={15} aria-hidden="true" />
               </div>
             </Link>
           ))}
@@ -46,9 +46,9 @@ export default function ServicesGrid() {
 
         {/* Differentiator callout */}
         <div className="mt-10 bg-[var(--teal)] rounded-2xl p-8 md:p-10 text-center">
-          <p className="font-playfair text-2xl md:text-3xl font-semibold text-white mb-3">
-            "You will never be treated by an assistant or aide."
-          </p>
+          <blockquote className="font-playfair text-2xl md:text-3xl font-semibold text-white mb-3">
+            &ldquo;You will never be treated by an assistant or aide.&rdquo;
+          </blockquote>
           <p className="text-white/80 font-inter max-w-2xl mx-auto">
             Dr. Amanda spends 100% of your treatment time with you — a personal commitment to individualized care that makes all the difference.
           </p>

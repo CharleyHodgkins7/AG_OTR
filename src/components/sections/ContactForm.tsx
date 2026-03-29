@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
 const FORMSPREE_ID = "xwvwklep";
@@ -28,6 +28,14 @@ export default function ContactForm() {
     message: "",
     referral: "",
   });
+  const successHeadingRef = useRef<HTMLHeadingElement>(null);
+
+  // Move focus to success heading after submission
+  useEffect(() => {
+    if (status === "success") {
+      successHeadingRef.current?.focus();
+    }
+  }, [status]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -65,9 +73,17 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-[var(--sand-light)] border border-[var(--teal)] rounded-2xl p-10 text-center">
-        <CheckCircle size={48} className="text-[var(--teal)] mx-auto mb-4" />
-        <h3 className="font-playfair text-2xl font-semibold text-[var(--charcoal)] mb-2">
+      <div
+        role="status"
+        aria-live="polite"
+        className="bg-[var(--sand-light)] border border-[var(--teal)] rounded-2xl p-10 text-center"
+      >
+        <CheckCircle size={48} aria-hidden="true" className="text-[var(--teal)] mx-auto mb-4" />
+        <h3
+          ref={successHeadingRef}
+          tabIndex={-1}
+          className="font-playfair text-2xl font-semibold text-[var(--charcoal)] mb-2 focus:outline-none"
+        >
           Message Received!
         </h3>
         <p className="text-[var(--text-muted)] font-inter">
@@ -84,16 +100,20 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} aria-busy={status === "loading"} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
-            First Name <span className="text-[var(--cta-orange)]">*</span>
+          <label htmlFor="firstName" className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
+            First Name <span className="text-[var(--cta-orange)]" aria-hidden="true">*</span>
+            <span className="sr-only">(required)</span>
           </label>
           <input
+            id="firstName"
             type="text"
             name="firstName"
             required
+            aria-required="true"
+            autoComplete="given-name"
             value={formData.firstName}
             onChange={handleChange}
             placeholder="Amanda"
@@ -101,12 +121,14 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
+          <label htmlFor="lastName" className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
             Last Name
           </label>
           <input
+            id="lastName"
             type="text"
             name="lastName"
+            autoComplete="family-name"
             value={formData.lastName}
             onChange={handleChange}
             placeholder="Gretsch"
@@ -117,13 +139,17 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
-            Email <span className="text-[var(--cta-orange)]">*</span>
+          <label htmlFor="email" className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
+            Email <span className="text-[var(--cta-orange)]" aria-hidden="true">*</span>
+            <span className="sr-only">(required)</span>
           </label>
           <input
+            id="email"
             type="email"
             name="email"
             required
+            aria-required="true"
+            autoComplete="email"
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
@@ -131,12 +157,14 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
+          <label htmlFor="phone" className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
             Phone
           </label>
           <input
+            id="phone"
             type="tel"
             name="phone"
+            autoComplete="tel"
             value={formData.phone}
             onChange={handleChange}
             placeholder="(760) 555-0100"
@@ -146,10 +174,11 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
+        <label htmlFor="referral" className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
           How did you hear about us?
         </label>
         <select
+          id="referral"
           name="referral"
           value={formData.referral}
           onChange={handleChange}
@@ -165,12 +194,15 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
-          Message <span className="text-[var(--cta-orange)]">*</span>
+        <label htmlFor="message" className="block text-sm font-semibold font-inter text-[var(--charcoal)] mb-1.5">
+          Message <span className="text-[var(--cta-orange)]" aria-hidden="true">*</span>
+          <span className="sr-only">(required)</span>
         </label>
         <textarea
+          id="message"
           name="message"
           required
+          aria-required="true"
           value={formData.message}
           onChange={handleChange}
           rows={5}
@@ -180,8 +212,11 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 text-red-600 text-sm font-inter bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-          <AlertCircle size={16} />
+        <div
+          role="alert"
+          className="flex items-center gap-2 text-red-600 text-sm font-inter bg-red-50 border border-red-200 rounded-xl px-4 py-3"
+        >
+          <AlertCircle size={16} aria-hidden="true" />
           Something went wrong. Please try again or call us directly at 760-525-3111.
         </div>
       )}
@@ -193,12 +228,12 @@ export default function ContactForm() {
       >
         {status === "loading" ? (
           <>
-            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            Sending...
+            <div aria-hidden="true" className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            <span>Sending…</span>
           </>
         ) : (
           <>
-            <Send size={18} />
+            <Send size={18} aria-hidden="true" />
             Send Message
           </>
         )}

@@ -30,8 +30,8 @@ export default function Hero() {
             <div className="hidden lg:flex justify-center lg:justify-start items-center">
               <div className="relative w-[460px] h-[460px] xl:w-[520px] xl:h-[520px] overflow-hidden shadow-2xl bg-[var(--teal-light)]" style={{ borderRadius: "42% 58% 62% 38% / 45% 38% 62% 55%" }}>
                 <Image
-                  src="https://images.unsplash.com/photo-1752652011858-302f08a6dc9f?w=800&h=900&fit=crop&crop=faces,top"
-                  alt="Happy mother and daughter together"
+                  src={img("/images/hero-family.png")}
+                  alt="Mom and daughter hugging warmly"
                   fill
                   className="object-cover object-center"
 
@@ -70,13 +70,13 @@ export default function Hero() {
                   className="flex items-center justify-center gap-2 bg-[var(--cta-orange)] hover:bg-[var(--cta-orange-dark)] text-white font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   Book Free Consultation
-                  <ArrowRight size={18} />
+                  <ArrowRight size={18} aria-hidden="true" />
                 </Link>
                 <a
                   href={SITE.phoneHref}
                   className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 border border-white/30"
                 >
-                  <Phone size={18} />
+                  <Phone size={18} aria-hidden="true" />
                   {SITE.phone}
                 </a>
               </div>
@@ -89,7 +89,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-[var(--cta-orange)]/20 border border-[var(--cta-orange)]/60 text-white text-xs font-inter font-semibold px-4 py-1.5 rounded-full hover:bg-[var(--cta-orange)]/35 transition-colors"
                 >
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--cta-orange)] flex-shrink-0">
+                  <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-[var(--cta-orange)] flex-shrink-0">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                   </svg>
                   #1 Best OT in Encinitas · 2026

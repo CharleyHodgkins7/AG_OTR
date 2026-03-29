@@ -17,7 +17,7 @@ export default function ConditionAccordion() {
       {CONDITIONS.map((condition, i) => {
         const isOpen = openSlug === condition.slug;
         return (
-          <div key={condition.slug} id={condition.slug}>
+          <div key={condition.slug} id={condition.slug} style={{ scrollMarginTop: "80px" }}>
             {/* CTA between every 4 conditions */}
             {i > 0 && i % 4 === 0 && (
               <div className="my-6 bg-[var(--sand)] rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border border-[var(--border)]">
@@ -45,32 +45,42 @@ export default function ConditionAccordion() {
                   : "border-[var(--border)] bg-white hover:border-[var(--teal-light)] hover:shadow-sm"
               }`}
             >
-              <button
-                onClick={() => toggle(condition.slug)}
-                className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
-                aria-expanded={isOpen}
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-2 h-2 rounded-full bg-[var(--teal)] flex-shrink-0" />
-                  <div>
-                    <h3 className="font-playfair text-xl font-semibold text-[var(--charcoal)]">
-                      {condition.fullTitle}
-                    </h3>
-                    <p className="text-[var(--text-muted)] text-sm font-inter mt-1">
-                      {condition.summary}
-                    </p>
+              <h3 className="font-playfair text-xl font-semibold text-[var(--charcoal)] m-0">
+                <button
+                  id={`accordion-btn-${condition.slug}`}
+                  onClick={() => toggle(condition.slug)}
+                  className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
+                  aria-expanded={isOpen}
+                  aria-controls={`accordion-panel-${condition.slug}`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div aria-hidden="true" className="w-2 h-2 rounded-full bg-[var(--teal)] flex-shrink-0" />
+                    <div>
+                      <span className="font-playfair text-xl font-semibold text-[var(--charcoal)]">
+                        {condition.fullTitle}
+                      </span>
+                      <p className="text-[var(--text-muted)] text-sm font-inter mt-1">
+                        {condition.summary}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <ChevronDown
-                  size={22}
-                  className={`text-[var(--teal)] flex-shrink-0 transition-transform duration-300 ${
-                    isOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+                  <ChevronDown
+                    size={22}
+                    aria-hidden="true"
+                    className={`text-[var(--teal)] flex-shrink-0 transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              </h3>
 
               {isOpen && (
-                <div className="px-6 pb-6 border-t border-[var(--border)]">
+                <div
+                  id={`accordion-panel-${condition.slug}`}
+                  role="region"
+                  aria-labelledby={`accordion-btn-${condition.slug}`}
+                  className="px-6 pb-6 border-t border-[var(--border)]"
+                >
                   <div className="pt-5 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <h4 className="text-sm font-semibold uppercase tracking-widest text-[var(--text-muted)] font-inter mb-3">
@@ -94,14 +104,14 @@ export default function ConditionAccordion() {
                           href="/treatments"
                           className="flex items-center gap-2 text-[var(--teal)] font-semibold text-sm font-inter hover:gap-3 transition-all"
                         >
-                          <ArrowRight size={14} />
+                          <ArrowRight size={14} aria-hidden="true" />
                           View all treatments
                         </Link>
                         <Link
                           href="/contact"
                           className="flex items-center gap-2 text-[var(--cta-orange)] font-semibold text-sm font-inter hover:gap-3 transition-all"
                         >
-                          <ArrowRight size={14} />
+                          <ArrowRight size={14} aria-hidden="true" />
                           Book free consultation
                         </Link>
                       </div>

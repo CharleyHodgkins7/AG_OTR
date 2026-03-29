@@ -29,6 +29,17 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   background-color: var(--off-white);
   color: var(--charcoal);
@@ -66,8 +77,28 @@ h1, h2, h3, h4, h5 {
 ::-webkit-scrollbar-track { background: var(--sand-light); }
 ::-webkit-scrollbar-thumb { background: var(--teal-light); border-radius: 3px; }
 
+/* Focus visible — site-wide (WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid var(--cta-orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* Accordion animation */
 .accordion-content {
   transition: max-height 0.4s ease, opacity 0.3s ease;
   overflow: hidden;
+}
+
+/* Skip link helper */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

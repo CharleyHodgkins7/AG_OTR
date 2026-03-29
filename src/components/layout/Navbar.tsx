@@ -20,6 +20,7 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const servicesButtonRef = useRef<HTMLButtonElement>(null);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -31,6 +32,18 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
+
+  // Close dropdown on Escape key and return focus to trigger
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && servicesOpen) {
+        setServicesOpen(false);
+        servicesButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [servicesOpen]);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -80,7 +93,11 @@ export default function Navbar() {
             {/* Services Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
+                ref={servicesButtonRef}
                 onClick={() => setServicesOpen((v) => !v)}
+                aria-expanded={servicesOpen}
+                aria-haspopup="true"
+                aria-controls="services-menu"
                 className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium font-inter transition-colors ${
                   isServicesActive ? "text-[var(--teal)] font-semibold" : "text-[var(--charcoal)] hover:text-[var(--teal)]"
                 }`}
@@ -88,18 +105,24 @@ export default function Navbar() {
                 Services
                 <ChevronDown
                   size={14}
+                  aria-hidden="true"
                   className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
               {/* Dropdown Panel */}
               {servicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-[var(--border)] overflow-hidden">
+                <div
+                  id="services-menu"
+                  role="menu"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-[var(--border)] overflow-hidden"
+                >
                   <div className="p-2">
                     {SERVICES_DROPDOWN.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
+                        role="menuitem"
                         onClick={() => setServicesOpen(false)}
                         className={`flex flex-col px-4 py-3 rounded-xl transition-colors group ${
                           pathname === item.href
@@ -138,7 +161,7 @@ export default function Navbar() {
               href={SITE.phoneHref}
               className="hidden lg:flex items-center gap-2 text-sm font-medium text-[var(--charcoal)] hover:text-[var(--teal)] transition-colors mr-1"
             >
-              <Phone size={15} />
+              <Phone size={15} aria-hidden="true" />
               {SITE.phone}
             </a>
 
@@ -156,7 +179,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -185,16 +208,20 @@ export default function Navbar() {
             <div>
               <button
                 onClick={() => setMobileServicesOpen((v) => !v)}
+                aria-expanded={mobileServicesOpen}
+                aria-haspopup="true"
+                aria-controls="mobile-services-menu"
                 className="w-full flex items-center justify-between px-3 py-3 text-[var(--charcoal)] hover:text-[var(--teal)] hover:bg-[var(--sand-light)] rounded-md text-sm font-medium font-inter transition-colors"
               >
                 Services
                 <ChevronDown
                   size={14}
+                  aria-hidden="true"
                   className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
                 />
               </button>
               {mobileServicesOpen && (
-                <div className="ml-4 mt-1 space-y-1 border-l-2 border-[var(--border)] pl-3">
+                <div id="mobile-services-menu" className="ml-4 mt-1 space-y-1 border-l-2 border-[var(--border)] pl-3">
                   {SERVICES_DROPDOWN.map((item) => (
                     <Link
                       key={item.href}
