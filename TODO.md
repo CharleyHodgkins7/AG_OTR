@@ -5,6 +5,19 @@ Repo: [github.com/CharleyHodgkins7/AG_OTR](https://github.com/CharleyHodgkins7/A
 
 ---
 
+## Audience Notes
+
+- **Primary target: stressed-out parents of difficult kids** — parents who are exhausted, have tried other options, and need someone with real expertise who will work directly with their child (not hand them off to an aide)
+- Secondary audiences: teens/adults seeking neurofeedback/biofeedback for ADHD, anxiety, TBI, peak performance
+- Messaging should speak to the parent's frustration and hope, not just list credentials
+
+- [ ] **Refine audience personas and demographics**
+  - Define 2–3 detailed personas (e.g. "parent of ADHD child", "adult with anxiety/burnout", "athlete seeking peak performance")
+  - Research age ranges, income levels, zip codes within driving distance of Encinitas
+  - Use persona research to sharpen copy, ad targeting, and imagery choices across the site
+
+---
+
 ## Deadlines
 
 - [ ] **Cancel Wix Premium before August renewal**
