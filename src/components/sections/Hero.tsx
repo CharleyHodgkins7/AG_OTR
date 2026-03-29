@@ -17,34 +17,38 @@ export default function Hero() {
           priority
           unoptimized
         />
-        {/* Dark sweep on the right half only — keeps text legible, left stays natural */}
-        <div className="absolute inset-0 bg-gradient-to-l from-[var(--charcoal)]/85 via-[var(--charcoal)]/50 to-transparent" />
+        {/* Mobile: darken from bottom so text is readable over beach */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)]/85 via-[var(--charcoal)]/50 to-[var(--charcoal)]/20 lg:hidden" />
+        {/* Desktop: dark sweep right half only */}
+        <div className="absolute inset-0 bg-gradient-to-l from-[var(--charcoal)]/85 via-[var(--charcoal)]/50 to-transparent hidden lg:block" />
       </div>
 
       {/* Main content */}
       <div className="relative z-10 flex-1 flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-16 lg:pt-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
 
-            {/* Left: Image */}
-            <div className="hidden lg:flex justify-center lg:justify-start items-center">
-              <div className="relative w-[460px] h-[460px] xl:w-[520px] xl:h-[520px] overflow-hidden shadow-2xl bg-[var(--teal-light)]" style={{ borderRadius: "42% 58% 62% 38% / 45% 38% 62% 55%" }}>
+            {/* Image — centered blob on mobile, left column on desktop */}
+            <div className="flex justify-center lg:justify-start items-center">
+              <div
+                className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-[460px] lg:h-[460px] xl:w-[520px] xl:h-[520px] overflow-hidden shadow-2xl bg-[var(--teal-light)]"
+                style={{ borderRadius: "42% 58% 62% 38% / 45% 38% 62% 55%" }}
+              >
                 <Image
                   src={img("/images/hero-family.png")}
                   alt="Mom and daughter hugging warmly"
                   fill
                   className="object-cover object-center"
-
                   priority
                   unoptimized
                 />
               </div>
             </div>
 
-            {/* Right: Text */}
-            <div>
+            {/* Text */}
+            <div className="text-center lg:text-left">
               {/* Eyebrow */}
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-4 lg:mb-6">
                 <div className="h-px w-8 bg-[var(--cta-orange)]" />
                 <span className="text-[var(--cta-orange)] text-sm font-semibold uppercase tracking-widest font-inter">
                   Encinitas, CA · PhD, MS, OTR/L
@@ -59,12 +63,12 @@ export default function Hero() {
               </h1>
 
               {/* Short subheadline */}
-              <p className="text-white/80 text-lg font-inter font-light leading-relaxed mb-8 max-w-md">
+              <p className="text-white/80 text-lg font-inter font-light leading-relaxed mb-6 lg:mb-8 max-w-md mx-auto lg:mx-0">
                 1:1 occupational therapy, neurofeedback & biofeedback — always with Dr. Amanda, never an aide.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-9">
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6 lg:mb-9">
                 <Link
                   href="/contact"
                   className="flex items-center justify-center gap-2 bg-[var(--cta-orange)] hover:bg-[var(--cta-orange-dark)] text-white font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 shadow-lg hover:shadow-xl"
@@ -82,7 +86,7 @@ export default function Hero() {
               </div>
 
               {/* Trust pills */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2">
                 <a
                   href="https://qualitybusinessawards.com/2026/the-best-Occupational-Therapist-in-Encinitas-California/Amanda-J-Gretsch-Inc"
                   target="_blank"
