@@ -50,7 +50,7 @@ export default function Hero() {
               {/* Eyebrow */}
               <div className="flex items-center justify-center lg:justify-start gap-3 mb-4 lg:mb-6">
                 <div className="h-px w-8 bg-[var(--cta-orange)]" />
-                <span className="text-[var(--cta-orange)] text-sm font-semibold uppercase tracking-widest font-inter">
+                <span className="text-white text-sm font-semibold uppercase tracking-widest font-inter">
                   Encinitas, CA · PhD, MS, OTR/L
                 </span>
               </div>
