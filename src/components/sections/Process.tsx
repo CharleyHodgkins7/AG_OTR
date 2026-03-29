@@ -1,4 +1,4 @@
-1import SectionHeader from "@/components/ui/SectionHeader";
+import SectionHeader from "@/components/ui/SectionHeader";
 import { PROCESS_STEPS } from "@/lib/siteData";
 
 export default function Process() {
