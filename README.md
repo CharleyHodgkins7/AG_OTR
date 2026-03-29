@@ -6,6 +6,23 @@ Premium Next.js website for Amanda J Gretsch, Inc. — occupational therapist, n
 
 ---
 
+## Account Ownership
+
+All accounts are managed by **Charley Hodgkins** (`charley.hodgkins@gmail.com`).
+
+| Service | Account | Notes |
+|---------|---------|-------|
+| GitHub | `charley.hodgkins@gmail.com` | Repo: `CharleyHodgkins7/AG_OTR` |
+| Vercel | `charley.hodgkins@gmail.com` | Auto-deploys from GitHub `main` |
+| Google Analytics 4 | `charley.hodgkins@gmail.com` | Property: `amandagretschot.com` · Measurement ID: `G-T3FWF8QGFC` |
+| Google Search Console | `charley.hodgkins@gmail.com` | Domain: `amandagretschot.com` · Verified Mar 2026 |
+| Formspree | — | Form ID: `xwvwklep` · Destination: `amandajaneotr@yahoo.com` |
+| Wix | Amanda's account | Domain registration only — DNS managed here |
+
+To grant Amanda access to GA4 or Search Console: Admin → User Management → add `amandajaneotr@yahoo.com`.
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -14,6 +31,7 @@ Premium Next.js website for Amanda J Gretsch, Inc. — occupational therapist, n
 | Language | TypeScript |
 | Styling | Tailwind CSS |
 | Icons | Lucide React |
+| Analytics | Google Analytics 4 (`G-T3FWF8QGFC`) via `@next/third-parties` |
 | Forms | Formspree (`xwvwklep`) |
 | Hosting | Vercel (free tier) |
 | Domain | Registered at Wix → DNS pointed to Vercel |
@@ -165,8 +183,21 @@ social: {
 
 ---
 
-## SEO
+## Analytics & Search
 
+### Google Analytics 4
+- Measurement ID: `G-T3FWF8QGFC`
+- Added to `src/app/layout.tsx` via `@next/third-parties/google` — fires on every page
+- View data at [analytics.google.com](https://analytics.google.com)
+- Key things to monitor: contact form submissions, phone clicks, `/contact` page views, geographic breakdown
+
+### Google Search Console
+- Verified Mar 2026 via DNS TXT record in Wix
+- Sitemap submitted: `https://www.amandagretschot.com/sitemap.xml` (14 pages, Status: Success)
+- View data at [search.google.com/search-console](https://search.google.com/search-console)
+- Key things to monitor: search queries, click-through rates, indexing errors
+
+### SEO (in code)
 - Per-page `metadata` in each `page.tsx`
 - `MedicalBusiness` JSON-LD schema in `layout.tsx` with verified coordinates (33.045753, -117.2805166)
 - `sitemap.ts` → auto-generates `/sitemap.xml`
@@ -178,9 +209,11 @@ social: {
 
 ## Roadmap
 
-- [ ] SEO — Google Search Console setup, keyword optimization
+- [ ] SEO — keyword optimization, FAQ sections on conditions/treatments pages
 - [ ] LLM search optimization — structured content for AI answer engines
 - [ ] Google Ads — Search + Maps campaign setup
 - [ ] Replace remaining placeholder images
 - [ ] Update social media links with real handles
 - [ ] Google Reviews integration / widget
+- [ ] Meta Pixel — required before running Facebook/Instagram ads
+- [ ] Migrate contact form to Resend API (removes Formspree 50/mo limit)
