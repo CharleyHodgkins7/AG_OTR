@@ -70,6 +70,16 @@ export default function ContactPage() {
                 <p className="text-white font-inter text-sm">Mon – Fri, by appointment</p>
               </div>
             </div>
+
+            <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <div className="w-10 h-10 rounded-xl bg-white/15 group-hover:bg-white/25 flex items-center justify-center flex-shrink-0 transition-colors">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div>
+                <p className="text-white/80 text-xs font-inter uppercase tracking-wider font-semibold">Instagram</p>
+                <p className="text-white font-semibold font-inter text-sm group-hover:text-[var(--sand)] transition-colors">@dr_amanda_gretsch_ot</p>
+              </div>
+            </a>
           </div>
 
           {/* CTAs */}
