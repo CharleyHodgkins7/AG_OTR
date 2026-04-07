@@ -17,8 +17,7 @@ export const SITE = {
   fullAddress: "543 Encinitas Blvd., Ste. 114, Encinitas, CA 92024",
   url: "https://www.amandagretschot.com",
   social: {
-    // 🚩 PLACEHOLDER: Update with real social handles
-    instagram: "https://www.instagram.com/",
+    instagram: "https://www.instagram.com/dr_amanda_gretsch_ot/",
     facebook: "https://www.facebook.com/",
     youtube: "https://www.youtube.com/",
   },

@@ -5,6 +5,7 @@ import ConditionsStrip from "@/components/sections/ConditionsStrip";
 import Testimonials from "@/components/sections/Testimonials";
 import Process from "@/components/sections/Process";
 import AboutPreview from "@/components/sections/AboutPreview";
+import InstagramCTA from "@/components/sections/InstagramCTA";
 
 export const metadata: Metadata = {
   title: "Amanda J Gretsch, Inc. | Occupational Therapist | Encinitas, CA",
@@ -21,6 +22,7 @@ export default function HomePage() {
       <ConditionsStrip />
       <Testimonials />
       <Process />
+      <InstagramCTA />
     </>
   );
 }
