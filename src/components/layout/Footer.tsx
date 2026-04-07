@@ -169,8 +169,15 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Disclaimer */}
+        <div className="mt-10 pt-6 border-t border-white/10">
+          <p className="text-white/40 text-xs font-inter leading-relaxed">
+            <span className="font-semibold text-white/50">Disclaimer:</span> The information and services provided on this website are for educational and wellness purposes only and are not intended as medical advice. Services are provided within the scope of occupational therapy and related wellness practices. They are not intended to diagnose, treat, cure, or prevent any medical condition. Use of this website does not establish a therapeutic or occupational therapy provider–client relationship. Individual results may vary. Always consult with your physician or other qualified healthcare provider before beginning any new health or wellness program.
+          </p>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-white/60 text-xs font-inter">
             © {new Date().getFullYear()} Amanda J Gretsch, Inc. All rights reserved.
           </p>
