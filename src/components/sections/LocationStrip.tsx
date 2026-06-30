@@ -11,14 +11,14 @@ export default function LocationStrip() {
           {/* Map */}
           <div className="rounded-3xl overflow-hidden shadow-xl border border-[var(--border)] aspect-[4/3] lg:aspect-auto lg:h-80 relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.8497506248!2d-117.29518!3d33.0369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0b6e6d3b3b3b%3A0x0!2s543+Encinitas+Blvd%2C+Encinitas%2C+CA+92024!5e0!3m2!1sen!2sus!4v1700000000000"
+              src="https://www.google.com/maps?q=527+Encinitas+Blvd+Suite+208+Encinitas+CA+92024&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, position: "absolute", inset: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Amanda J Gretsch, Inc. — 543 Encinitas Blvd, Encinitas CA"
+              title="Amanda J Gretsch, Inc. — 527 Encinitas Blvd, Encinitas CA"
             />
           </div>
 
@@ -71,7 +71,7 @@ export default function LocationStrip() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://maps.google.com/?q=543+Encinitas+Blvd+Suite+114+Encinitas+CA+92024"
+                href="https://maps.google.com/?q=527+Encinitas+Blvd+Suite+208+Encinitas+CA+92024"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 border-2 border-[var(--teal)] text-[var(--teal)] hover:bg-[var(--teal)] hover:text-white font-semibold px-6 py-3 rounded-full text-sm transition-all font-inter"

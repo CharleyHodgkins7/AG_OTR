@@ -6,7 +6,7 @@ import { SITE } from "@/lib/siteData";
 export const metadata: Metadata = {
   title: "Contact — Free 15-Minute Consultation",
   description:
-    "Contact Dr. Amanda Gretsch for a free 15-minute consultation. Call 760-525-3111 or send a message. Located at 543 Encinitas Blvd., Ste. 114, Encinitas, CA 92024.",
+    "Contact Dr. Amanda Gretsch for a free 15-minute consultation. Call 760-525-3111 or send a message. Located at 527 Encinitas Blvd., Ste. 208, Encinitas, CA 92024.",
 };
 
 export default function ContactPage() {
@@ -92,7 +92,7 @@ export default function ContactPage() {
               Call for Free Consultation
             </a>
             <a
-              href="https://maps.google.com/?q=543+Encinitas+Blvd+Suite+114+Encinitas+CA+92024"
+              href="https://maps.google.com/?q=527+Encinitas+Blvd+Suite+208+Encinitas+CA+92024"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-full text-sm transition-colors font-inter border border-white/25"
@@ -105,14 +105,14 @@ export default function ContactPage() {
         {/* Right: map — fills remaining space */}
         <div className="lg:w-[62%] h-72 lg:h-auto relative">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.0!2d-117.2805166!3d33.045753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0c6c265e4acd%3A0x597a35de3cb999ad!2sAmanda+J+Gretsch%2C+Inc.!5e0!3m2!1sen!2sus!4v1700000000000"
+            src="https://www.google.com/maps?q=527+Encinitas+Blvd+Suite+208+Encinitas+CA+92024&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, position: "absolute", inset: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Amanda J Gretsch, Inc. — 543 Encinitas Blvd, Encinitas CA"
+            title="Amanda J Gretsch, Inc. — 527 Encinitas Blvd, Encinitas CA"
           />
         </div>
 

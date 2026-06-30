@@ -12,9 +12,9 @@ export const SITE = {
   phoneHref: "tel:7605253111",
   email: "amandajaneotr@yahoo.com",
   emailHref: "mailto:amandajaneotr@yahoo.com",
-  address: "543 Encinitas Blvd., Ste. 114",
+  address: "527 Encinitas Blvd., Ste. 208",
   city: "Encinitas, CA 92024",
-  fullAddress: "543 Encinitas Blvd., Ste. 114, Encinitas, CA 92024",
+  fullAddress: "527 Encinitas Blvd., Ste. 208, Encinitas, CA 92024",
   url: "https://www.amandagretschot.com",
   social: {
     instagram: "https://www.instagram.com/dr_amanda_gretsch_ot/",

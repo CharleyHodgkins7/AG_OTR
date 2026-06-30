@@ -205,7 +205,7 @@ export default function PoliciesPage() {
                 </ul>
               </div>
               <p>
-                For any privacy-related requests, contact: Amanda J. Gretsch, Inc., 543 Encinitas Blvd., Ste. 114, Encinitas, CA 92024 · {SITE.phone}
+                For any privacy-related requests, contact: Amanda J. Gretsch, Inc., 527 Encinitas Blvd., Ste. 208, Encinitas, CA 92024 · {SITE.phone}
               </p>
               <p>
                 We reserve the right to change this notice. Changes will be effective for medical information we already have about you as well as any information we receive in the future.
